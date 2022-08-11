@@ -1,0 +1,19 @@
+{
+  "name": "my-notion-library",
+  "version": "1.0.0",
+  "description": "alexa skill to update my personal notion library database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amazon Alexa",
+  "license": "Apache License",
+  "dependencies": {
+    "@notionhq/client": "^2.1.1",
+    "ask-sdk-core": "^2.7.0",
+    "ask-sdk-model": "^1.19.0",
+    "aws-sdk": "^2.326.0",
+    "dotenv": "^16.0.1",
+    "node-fetch": "2.6.6"
+  }
+}

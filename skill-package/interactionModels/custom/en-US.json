@@ -1,0 +1,644 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "my notion library",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "GetBookByNumStatusIntent",
+          "slots": [
+            {
+              "name": "BOOK_STATUS",
+              "type": "BOOK_STATUS",
+              "samples": [
+                "{BOOK_STATUS}"
+              ]
+            }
+          ],
+          "samples": [
+            "what number of books have status {BOOK_STATUS}",
+            "how many books are in my {BOOK_STATUS}",
+            "what is the number of books with status {BOOK_STATUS}",
+            "how many books fall under {BOOK_STATUS}",
+            "how many books have status {BOOK_STATUS}"
+          ]
+        },
+        {
+          "name": "UpdateFormatIntent",
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "samples": [
+                "{BOOK_NAME}"
+              ]
+            },
+            {
+              "name": "BOOK_FORMAT",
+              "type": "BOOK_FORMAT",
+              "samples": [
+                "{BOOK_FORMAT}"
+              ]
+            }
+          ],
+          "samples": [
+            "update {BOOK_NAME} to have format {BOOK_FORMAT}",
+            "give {BOOK_NAME} a {BOOK_FORMAT} format",
+            "put {BOOK_NAME} as {BOOK_FORMAT}",
+            "change the format of {BOOK_NAME} to {BOOK_FORMAT}",
+            "change {BOOK_NAME} to {BOOK_FORMAT}",
+            "update the format of {BOOK_NAME} to {BOOK_FORMAT}"
+          ]
+        },
+        {
+          "name": "UpdateRatingIntent",
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "samples": [
+                "{BOOK_NAME}"
+              ]
+            },
+            {
+              "name": "BOOK_RATING",
+              "type": "BOOK_RATING",
+              "samples": [
+                "{BOOK_RATING}"
+              ]
+            }
+          ],
+          "samples": [
+            "update {BOOK_NAME} to a {BOOK_RATING} rating",
+            "change the rating of {BOOK_NAME} to {BOOK_RATING}",
+            "give {BOOK_NAME} a {BOOK_RATING} rating",
+            "give {BOOK_NAME} {BOOK_RATING}",
+            "update the rating of {BOOK_NAME} to {BOOK_RATING}"
+          ]
+        },
+        {
+          "name": "UpdateStatusIntent",
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "samples": [
+                "{BOOK_NAME}"
+              ]
+            },
+            {
+              "name": "BOOK_STATUS",
+              "type": "BOOK_STATUS",
+              "samples": [
+                "{BOOK_STATUS}"
+              ]
+            }
+          ],
+          "samples": [
+            "give a {BOOK_STATUS} status to {BOOK_NAME}",
+            "give {BOOK_NAME} a status of {BOOK_STATUS}",
+            "change the status of {BOOK_NAME} to {BOOK_STATUS}",
+            "add {BOOK_NAME} to my {BOOK_STATUS}",
+            "update the status of {BOOK_NAME} to {BOOK_STATUS}"
+          ]
+        },
+        {
+          "name": "GetBookStatusIntent",
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "samples": [
+                "{BOOK_NAME}"
+              ]
+            }
+          ],
+          "samples": [
+            "what\u0027s the status of {BOOK_NAME}",
+            "what\u0027s the current status of {BOOK_NAME}",
+            "tell me the status of {BOOK_NAME}",
+            "what is the status of {BOOK_NAME}",
+            "give me the status of {BOOK_NAME}"
+          ]
+        },
+        {
+          "name": "GetBookAuthorIntent",
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "samples": [
+                "{BOOK_NAME}"
+              ]
+            }
+          ],
+          "samples": [
+            "which author is {BOOK_NAME} written by",
+            "tell me who the author of {BOOK_NAME} is",
+            "who wrote {BOOK_NAME}",
+            "who is  {BOOK_NAME} written by",
+            "who is the author of {BOOK_NAME}"
+          ]
+        },
+        {
+          "name": "AddBookIntent",
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "samples": [
+                "{BOOK_NAME}"
+              ]
+            },
+            {
+              "name": "BOOK_AUTHOR",
+              "type": "AMAZON.Author",
+              "samples": [
+                "{BOOK_AUTHOR}"
+              ]
+            },
+            {
+              "name": "BOOK_STATUS",
+              "type": "BOOK_STATUS"
+            }
+          ],
+          "samples": [
+            "add {BOOK_NAME} written by {BOOK_AUTHOR} to my {BOOK_STATUS}",
+            "add {BOOK_NAME} by {BOOK_AUTHOR} with status {BOOK_STATUS}",
+            "add {BOOK_NAME} by {BOOK_AUTHOR}",
+            "add {BOOK_NAME} by {BOOK_AUTHOR} to my library with a {BOOK_STATUS} status",
+            "add {BOOK_NAME} by {BOOK_AUTHOR} to my library"
+          ]
+        },
+        {
+          "name": "GetBookGenreIntent",
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "samples": [
+                "{BOOK_NAME}"
+              ]
+            }
+          ],
+          "samples": [
+            "what are the genres of {BOOK_NAME}",
+            "what is {BOOK_NAME} classified as",
+            "what genre does {BOOK_NAME} fall under",
+            "what is the genre of {BOOK_NAME}",
+            "give me the genre of {BOOK_NAME}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Finished"
+              }
+            },
+            {
+              "name": {
+                "value": "Currently Reading"
+              }
+            },
+            {
+              "name": {
+                "value": "DNF",
+                "synonyms": [
+                  "D.N.F",
+                  "did not finish",
+                  "dnf"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "TBR",
+                "synonyms": [
+                  "T.B.R",
+                  "to be read",
+                  "tbr"
+                ]
+              }
+            }
+          ],
+          "name": "BOOK_STATUS"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "5 star",
+                "synonyms": [
+                  "5 stars"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "4 star",
+                "synonyms": [
+                  "4 stars"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "3 star",
+                "synonyms": [
+                  "3 stars"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "2 star",
+                "synonyms": [
+                  "2 stars"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "1 star",
+                "synonyms": [
+                  "1 stars"
+                ]
+              }
+            }
+          ],
+          "name": "BOOK_RATING"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "book"
+              }
+            },
+            {
+              "name": {
+                "value": "audiobook"
+              }
+            },
+            {
+              "name": {
+                "value": "ebook",
+                "synonyms": [
+                  "e-book"
+                ]
+              }
+            }
+          ],
+          "name": "BOOK_FORMAT"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "UpdateFormatIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1404323349831.731580537437"
+              }
+            },
+            {
+              "name": "BOOK_FORMAT",
+              "type": "BOOK_FORMAT",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1404323349831.644595037955"
+              }
+            }
+          ]
+        },
+        {
+          "name": "UpdateRatingIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.633227011136.517890862520"
+              }
+            },
+            {
+              "name": "BOOK_RATING",
+              "type": "BOOK_RATING",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.633227011136.1141938682465"
+              }
+            }
+          ]
+        },
+        {
+          "name": "UpdateStatusIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.919539118167.795081860119"
+              }
+            },
+            {
+              "name": "BOOK_STATUS",
+              "type": "BOOK_STATUS",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.919539118167.908596515730"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GetBookStatusIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.270470575549.629342877999"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GetBookAuthorIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.7989276614.1385947006501"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AddBookIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1473338428328.1648177243067"
+              }
+            },
+            {
+              "name": "BOOK_AUTHOR",
+              "type": "AMAZON.Author",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1473338428328.504618138412"
+              }
+            },
+            {
+              "name": "BOOK_STATUS",
+              "type": "BOOK_STATUS",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "GetBookGenreIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_NAME",
+              "type": "AMAZON.Book",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.265127143417.1142418976987"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GetBookByNumStatusIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "BOOK_STATUS",
+              "type": "BOOK_STATUS",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1289915596243.1591444059486"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1404323349831.731580537437",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the title of the book?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what book are you looking to update the format for?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1404323349831.644595037955",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what format are you updating to?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.633227011136.517890862520",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what book are you trying to update the rating of?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is the title of the book?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.633227011136.1141938682465",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what rating would you like to give?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.919539118167.795081860119",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what book are you trying to update the status for?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is the title of the book?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.919539118167.908596515730",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what status are you trying to update to?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.270470575549.629342877999",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what book are you trying to know the status of?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.7989276614.1385947006501",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which book are you trying to know the author of?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1473338428328.1648177243067",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the title of the book you are trying to add?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1473338428328.504618138412",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "who is {BOOK_NAME} written by?"
+          },
+          {
+            "type": "PlainText",
+            "value": "who is the book written by?"
+          },
+          {
+            "type": "PlainText",
+            "value": "who is the author of the book?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.265127143417.1142418976987",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what book are you trying to know the genre of?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1099573315654.1117714802455",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what book are you trying to update the genre for?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1099573315654.1087745161282",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what genres are you trying to classify your book as?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1289915596243.1591444059486",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what status are you trying to filter by?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "5"
+}
